@@ -1,0 +1,63 @@
+Summary of  some of the plugins I’m using at the moment and find their functionalities useful. We may want to keep their functions:
+
+agree to terms and conditions and privacy policy
+> easy 
+create albums or add photos
+> ok, but we need to limit this somehow, pics are fine but heavy for the server
+> I was thinking of "autoupload" function to get photos from a Couchsurfing profile, Picasa account or similar, because I imagine this will make things easier for people on the road without access to their HDD with photos
+user profile map - display user's location. Also, I was thinking of adding a general map showing where in the world our members are once we have many. We can discuss that.
+> I think of this as of one key functions. Later, I plan to examine the google maps API and how we can use it 
+friendship request
+> do we really need this? I wonder why there are "friends" on couchsurfing since some people put all their hosts, some do not use it at all
+follow users  - I was thinking of creating a list of favorites but couldnt find a plugin that does this. It’s more functional than following users as it allows you to browse users and add them to your catalog of favorites in order to save them for later. this is what i’m missing on cs but works nicely on workaday
+> yes! Following someone´s posts seems to be a good feature. I need to figure out how to implement this without creating many database interactions.  
+moderation function - report inappropriate users, content, messages
+> sure 
+profile progression bar
+> This helps probably to have profiles complete in a non-intrusive way (although I don´t feel well with a progress telling me that my profile is 77% complete) 
+expandable FAQs
+> easy 
+watermarking photos to protect them from copying - also watermarking pics uploaded by users with our f2f logo
+> I´m aware of libraries doing that, I need to check licensing and test it 
+invite friends to f2f
+> yes, does your account at your host´s server have some limits for mails sent from the server using php? 
+limit login attempts
+> sure, I will get some online training about security in general
+no right-click images - no saving images
+> why? Is watermarking not enough? People who want to steal images still have access to the src href of the <img> tag. 
+stats showing countries
+> should be easy with well organised database 
+restrict usernames
+> how exactly? 
+protecting site from bloggers and sploggers, no fictitious accounts
+> yes, will try to find out a "captcha" equivalent with generous licensing 
+copy-protect-  no right-click text saving
+> same as for images, people who want to steal will steal the text anyway. I don´t like sites preventing me using context menu.
+
+I’d like “country” to be visible next to users profile on members list, I wanted to achieve that with f2f but wasn't able to modify codes correctly.
+> since we will chose the layout of the profile web and results list on our own, we are free to chose what will be shown
+> to have good results, we I will need to optimize SQL queries once the db tables are defined.
+
+let me know what you think
+at some point i’d like to discuss how we are going to present families both within members section but also site-wise to promote building relationships among families.
+> Do you mean differencing single-person profiles to family profiles? Or representing multiple generations each one having a profile?
+>  I also though that each family member could have his mini-profile with picture, interests, facebook link etc.
+
+To promote the site, I think linking it with facebook is very powerful tool (but we need to use it wisely). I think we also should have "login with facebook" implemented.
+
+have a nice evening
+Magdalena
+
+Kids'n'Go
+info@kidsngo.org
+www.kidsngo.org
+
+On 22 Aug 2014, at 05:36, Lukáš Matìna <lukas.matena@gmail.com> wrote:
+
+Hi,
+I have been working on the quick search buttons. Have a look on attached file and try to click the icons (so far one way only - reload the page to reset). Feels alright? Note, that since this is SVG (vector images, not bitmaps), you don´t need any images to be downloaded => faster web.
+I have found a lots of icons with CC-BY licence (which means, use whatever, wherever, just mention the author - we can include his name and link in the code).
+Now a brief 2hrs of sleep until the kids will wake up...
+Lukas
+<test_wifi_icon.html><favicon.ico>
+
