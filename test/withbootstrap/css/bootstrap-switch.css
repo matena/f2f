@@ -111,7 +111,7 @@
   cursor: default !important;
 }
 .bootstrap-switch.bootstrap-switch-focused {
-  border-color: #FFFF4D;
+  border-color: #FFFF33;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -146,8 +146,8 @@
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
-  color: #fff;
-  background: #E8F12B;
+  color: #777;
+  background: #FFFF33;
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info {
@@ -171,7 +171,7 @@
 }
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
-  color: #000;
+  color: #777;
   background: #eeeeee;
 }
 .bootstrap-switch .bootstrap-switch-handle-on {
