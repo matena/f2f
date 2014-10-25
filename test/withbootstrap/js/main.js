@@ -40,3 +40,5 @@ $(function() {
     alert($stateSwitch.bootstrapSwitch('state'));
   });
 });
+
+

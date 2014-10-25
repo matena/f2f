@@ -147,44 +147,58 @@
 			<div class="tabbable" id="tabs-52283">
 				<ul class="nav nav-tabs">
 					<li class="active">
-						<a href="#panel-311914" data-toggle="tab">Find host</a>
+						<a href="#panelFindHost" data-toggle="tab">Find host</a>
 					</li>
 					<li>
-						<a href="#panel-452955" data-toggle="tab">Find friends</a>
+						<a href="#panelFindFriends" data-toggle="tab">Find friends</a>
 					</li>
 					<li>
-						<a href="#panel-311914" data-toggle="tab">Favorites</a>
+						<a href="#panelFavorites" data-toggle="tab">Favorites</a>
 					</li>
 				</ul>
 				<div class="tab-content">
-					<div class="tab-pane active" id="panel-311914" align="center">
+					<div class="tab-pane active" id="panelFindHost" align="center">
 						<p>
 						</p>
 					    <form class="form-horizontal" role="form">
 							<div class="form-group">
-								 <label for="location" class="col-sm-4">City, Country</label>
-								 <div class="col-sm-8">
+								<label for="location" class="col-sm-4">City, Country</label>
+								<div class="col-sm-6">
 									<input class="form-control" id="location" />
-								 </div>
+								</div>
+								<div class="col-sm-2">
+									<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span><br/><small>Search</small></button>
+								</div>
 							</div>
 							<div class="form-group">
 								 <label for="keywords" class="col-sm-4">Keywords</label>
-								 <div class="col-sm-8">
+								 <div class="col-sm-6">
 									<input class="form-control" id="keywords" />
 								 </div>
 							</div>
+							
 						</form>
-						<div class="btn-group">
-							 <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-left"></em> Left</button> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-center"></em> Center</button> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-right"></em> Right</button> <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-align-justify"></em> Justify</button>
+						
+						
+						<!--------  Clickable svg buttons -->
+						
+						<div class="embed-responsive embed-responsive-16by9">
+							<div class="embed-responsive-item">
+								<iframe src="./svg_buttons.html" frameborder="0" style="border:0" width="100%">
+								</iframe>
+							</div>
 						</div>
-						<div>
-							<iframe
-							  frameborder="0" style="border:0"
-							  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAk1VI6lIIdsKMmy6C8dw7bM2MzaDrJJeM&q=Wroclaw">
-							</iframe>
+						<!--------  Google maps canvas placeholder -->
+						<div class="embed-responsive embed-responsive-4by3">
+							<div class="embed-responsive-item" id="map-canvas" style="width:100%; display: block; padding=0px; margin=0px">
+							</div>
 						</div>
 					</div>
-					<div class="tab-pane" id="panel-452955">
+					<div class="tab-pane" id="panelFindFriends">
+						<p>
+						</p>
+					</div>
+					<div class="tab-pane" id="panelFavorites">
 						<p>
 						</p>
 					</div>
@@ -209,9 +223,12 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
+							<iframe src="./svg_buttons_small.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
+							</iframe>
 							<p>
 								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
+							
 						</div>
 					</div>
 				</div>
@@ -225,8 +242,10 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
+							<iframe src="./svg_buttons_small2.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
+							</iframe>
 							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
 						</div>
 					</div>
@@ -241,8 +260,10 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
+							<iframe src="./svg_buttons_small.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
+							</iframe>
 							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
 						</div>
 					</div>
@@ -259,8 +280,10 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
+							<iframe src="./svg_buttons_small2.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
+							</iframe>
 							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
 						</div>
 					</div>
@@ -275,8 +298,10 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
+							<iframe src="./svg_buttons_small.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
+							</iframe>
 							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
 						</div>
 					</div>
@@ -291,36 +316,40 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
+							<iframe src="./svg_buttons_small2.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
+							</iframe>
 							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<ul class="pagination">
-				<li>
-					<a href="#">Prev</a>
-				</li>
-				<li>
-					<a href="#">1</a>
-				</li>
-				<li>
-					<a href="#">2</a>
-				</li>
-				<li>
-					<a href="#">3</a>
-				</li>
-				<li>
-					<a href="#">4</a>
-				</li>
-				<li>
-					<a href="#">5</a>
-				</li>
-				<li>
-					<a href="#">Next</a>
-				</li>
-			</ul>
+			<div align="center">
+				<ul class="pagination">
+					<li>
+						<a href="#">Prev</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">Next</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="row clearfix">
@@ -358,38 +387,11 @@
 			</p>
 		</div>
 	</div>
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<ul class="pagination">
-				<li>
-					<a href="#">Prev</a>
-				</li>
-				<li>
-					<a href="#">1</a>
-				</li>
-				<li>
-					<a href="#">2</a>
-				</li>
-				<li>
-					<a href="#">3</a>
-				</li>
-				<li>
-					<a href="#">4</a>
-				</li>
-				<li>
-					<a href="#">5</a>
-				</li>
-				<li>
-					<a href="#">Next</a>
-				</li>
-			</ul>
-		</div>
-	</div>
 </div>
-
+	
     <div class="footer">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+      <div class="container" align="center">
+        <p class="text-muted"><SMALL>Web by F2F team. All written and audiovisual documents are property of their respective authors. Respect their privacy.</SMALL></p>
       </div>
     </div>
 
@@ -400,7 +402,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.js"></script>
 	<script src="./js/bootstrap-switch.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	<script src="./js/main.js"></script>
+	<script src="./js/googlemaps.js"></script>
+
 	
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
