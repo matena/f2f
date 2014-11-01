@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="icon" href="./favicon.ico" />
-    <title>Family to family - Login Page</title>
+    <title>Family 2 family - Login Page</title>
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
@@ -32,22 +32,20 @@
         <small>... this is where families meet worldwide</small></h1>
 	  </div>
       <!-- /container -->
-      <form class="form-signin" role="form">
+      <form class="form-signin" role="form" action="./dashboard.html">
 		<h2 class="form-signin-heading">Login
 		<img src="./img/hoopoe.png" alt="Family hoopoe" class="img-rounded" height="50" width="50" /></h2>
-		<input type="email" class="form-control" placeholder="Email address" required="" autofocus="" /> 
+		<input type="login" class="form-control" placeholder="Login" required="" autofocus="" /> 
 		<input type="password" class="form-control" placeholder="Password" required="" /> 
 		<label class="checkbox">
 		<input type="checkbox" value="remember-me" /> Remember me</label> 
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Login <span class="glyphicon glyphicon-ok"></span></button> 
 		<div class="btn-group btn-block btn-group-lg">
-			<button class="btn btn-default" type="submit">Become member</button>
-			<button class="btn btn-default">Learn more!</button>
+			<a class="btn btn-default" href="./signup.html#signupform"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Join f2f!</a>
+			<a class="btn btn-default" href="./signup.html#generalinfo">Learn more!</a>
 		</div>
 	  </form>
+	  
     </div>
-    <!-- /container -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
