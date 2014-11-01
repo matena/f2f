@@ -32,7 +32,7 @@
         <small>... this is where families meet worldwide</small></h1>
 	  </div>
       <!-- /container -->
-      <form class="form-signin" role="form" action="./dashboard.html">
+      <form class="form-signin" role="form" action="./dashboard.php">
 		<h2 class="form-signin-heading">Login
 		<img src="./img/hoopoe.png" alt="Family hoopoe" class="img-rounded" height="50" width="50" /></h2>
 		<input type="login" class="form-control" placeholder="Login" required="" autofocus="" /> 
@@ -41,8 +41,8 @@
 		<input type="checkbox" value="remember-me" /> Remember me</label> 
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Login <span class="glyphicon glyphicon-ok"></span></button> 
 		<div class="btn-group btn-block btn-group-lg">
-			<a class="btn btn-default" href="./signup.html#signupform"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Join f2f!</a>
-			<a class="btn btn-default" href="./signup.html#generalinfo">Learn more!</a>
+			<a class="btn btn-default" href="./signup.php#signupform"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Join f2f!</a>
+			<a class="btn btn-default" href="./signup.php#generalinfo">Learn more!</a>
 		</div>
 	  </form>
 	  

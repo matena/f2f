@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿<?php // signup.php
+
+// Needed for user sumb
+include("./php/common.php");
+include("./php/db.php");
+
+if (!isset($_POST['submitok'])):
+    // Display the user signup form
+    ?>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -97,7 +107,7 @@ Vivamus vitae ullamcorper nunc, id gravida nisi. Cras blandit turpis non enim sa
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Signup <span class="glyphicon glyphicon-ok"></span></button> 
 		<div class="btn-group btn-block btn-group-lg">
 			<a class="btn btn-default" href="#generalinfo">Learn more!</a>
-			<a class="btn btn-default" href="./signin.html">Back to login</a>
+			<a class="btn btn-default" href="./signin.php">Back to login</a>
 		</div>
 
 		</form>
@@ -105,3 +115,93 @@ Vivamus vitae ullamcorper nunc, id gravida nisi. Cras blandit turpis non enim sa
     <!-- /container -->
   </body>
 </html>
+
+ <?php
+else:
+    // Process signup submission arriving from the same page.
+    dbConnect('matena');
+
+    if ($_POST['newLogin']=='' or $_POST['newFullName']==''
+      or $_POST['newEmail']=='') {
+        error('One or more required fields were left blank.\\n'.
+              'Please fill them in and try again.');
+    }
+    
+    // Check for existing user with the new id
+    $sql = "SELECT COUNT(*) FROM User WHERE login = '$_POST[newLogin]'";
+    $result = mysql_query($sql);
+    if (!$result) {	
+        error('A database error occurred in processing your '.
+              'submission.\\nIf this error persists, please '.
+              'contact s@kidsngo.org.');
+    }
+    if (mysql_result($result,0,0)>0) {
+        error('A user already exists with your chosen login.\\n'.
+              'Please try another.');
+    }
+    
+    $newpass = substr(md5(time()),0,6);
+    
+    $sql = "INSERT INTO user SET
+              login = '$_POST[newLogin]',
+              password = PASSWORD('$newPassword'),
+              displayName = '$_POST[newFullName]',
+              email = '$_POST[newemail]',
+              createDate = date(),
+			  lastLogin = '0',
+			  premium = '0',
+			  userLevel = '0'
+			  ";
+    if (!mysql_query($sql))
+        error('A database error occurred in processing your '.
+              'submission.\\nIf this error persists, please '.
+              'contact you@example.com.\\n' . mysql_error());
+              
+    // Email the new password to the person.
+    $message = "Hello!
+
+Your personal account for the Family 2 family project web
+has been created! To log in, proceed to the
+following address:
+
+    http://matena.free.fr/test/signin.php?login=/
+
+Your personal login and password are as
+follows:
+
+    userid: $_POST[newLogin]
+    password: $newPassword
+
+You aren't stuck with this password! Your can
+change it at any time after you have logged in.
+
+If you have any problems, feel free to contact me at
+<support@kids2go>.
+
+-Lukas Matena
+ Your Site Webmaster
+";
+
+    mail($_POST['newemail'],"Your Password for the Project Website",
+         $message, "From:Lukas Matena <lukas@kids=.com>");
+         
+    ?>
+    <!DOCTYPE html
+    <html>
+    <head>
+      <title> Registration Complete </title>
+      <meta http-equiv="Content-Type"
+        content="text/html; charset=iso-8859-1" />
+    </head>
+    <body>
+    <p><strong>User registration successful!</strong></p>
+    <p>Your userid and password have been emailed to
+       <strong><?=$_POST['newemail']?></strong>, the email address
+       you just provided in your registration form. To log in,
+       click <a href="index.php">here</a> to return to the login
+       page, and enter your new personal userid and password.</p>
+    </body>
+    </html>
+    <?php
+endif;
+?>
