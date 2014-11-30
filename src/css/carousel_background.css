@@ -1,0 +1,41 @@
+.carousel { z-index: -99; } /* keeps this behind all content */
+.carousel .item {
+    position: fixed; 
+    width: 100%; height: 100%;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 2s;
+
+}
+.carousel .one {
+    background: url(../img/beach_background.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .two {
+    background: url(../img/shadows_background.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .three {
+    background: url(../img/landing_kenya.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .four {
+    background: url(../img/football_background.jpg);
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .active.left, .carousel .active.right {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+.carousel .next, .carousel .prev {
+    left:0;
+    opacity:1;
+    z-index:1;
+}

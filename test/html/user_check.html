@@ -1,0 +1,74 @@
+<html>
+<body>
+&lt;script type=&quot;text/javascript&quot;&gt;&lt;!--
+
+// Custom settings
+
+var minlength = '3';  // Set to minimum required characters as specified in your form
+var delay = '1000';  // Time of inactivity to check. Always in milliseconds! (1 sec = 1000 millisec.)
+var divid = 'username_exists';  // ID of the DIV where response will be shown
+
+// Wait for user to finish typing
+
+function timeoutUsernameCheck(){
+if(window.mytimeout) window.clearTimeout(window.mytimeout);
+window.mytimeout = window.setTimeout(&quot;toggle_username()&quot;, delay);
+return true;
+}
+
+// Check availability
+
+function toggle_username() {
+
+if (window.XMLHttpRequest) {
+http = new XMLHttpRequest();
+} else if (window.ActiveXObject) {
+http = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+}
+
+handle = document.getElementById('username');
+var url = 'check.php?';
+if(handle.value.length &gt; minlength) {
+
+// Timestamp for preventing IE caching the GET request
+
+fetch_unix_timestamp = function()
+{
+return parseInt(new Date().getTime().toString().substring(0, 10))
+}
+
+var timestamp = fetch_unix_timestamp();
+
+var fullurl = url + 'do=check_username_exists&amp;username=' + encodeURIComponent(handle.value) + '&amp;timestamp=' + timestamp;
+
+http.open(&quot;GET&quot;, fullurl, true);
+http.send(null);
+http.onreadystatechange = statechange_username;
+}else{
+document.getElementById(divid).innerHTML = '';
+}
+}
+
+// Show availability
+
+function statechange_username() {
+if (http.readyState == 4) {
+
+var html = http.responseText;
+
+document.getElementById(divid).innerHTML = html;
+}
+}
+// --&gt;&lt;/script&gt;
+
+Is the username available?
+&lt;div id=&quot;wrapper&quot;&gt;
+&lt;div id=&quot;left&quot; style=&quot;float: left; margin-right: 8px;&quot;&gt;
+&lt;form&gt;
+&lt;label style=&quot;margin-right: 6px;&quot; for=&quot;username&quot;&gt;User name: &lt;/label&gt;
+&lt;input id=&quot;username&quot; style=&quot;display: inline;&quot; onkeyup=&quot;timeoutUsernameCheck()&quot; name=&quot;username&quot; size=&quot;20&quot; type=&quot;text&quot; /&gt;
+&lt;/form&gt;&lt;/div&gt;
+&lt;div id=&quot;username_exists&quot; style=&quot;display: inline; font-size: 11px; font-weight: bold; color:#FF3300&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</body>
+</html>
