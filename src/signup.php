@@ -126,7 +126,7 @@ Vivamus vitae ullamcorper nunc, id gravida nisi. Cras blandit turpis non enim sa
 			</h3>
 		</div> <!--- class="form-control" placeholder="Login" ---->
 		<input name="newLogin" type="login" class="form-control" placeholder="Login" required="" onkeyup="checkAvailability(document.signupFormForm.newLogin.value,login)" onfocusout="checkAvailability(document.signupFormForm.newLogin.value,login)"/> 
-		<input name="newFullName" class="form-control" placeholder="Full name" required="" onkeyup="checkAvailability(document.signupFormForm.newLogin.value)" onfocusout="checkAvailability(document.signupFormForm.newLogin.value,\"displayName\")/> 
+		<input name="newFullName" class="form-control" placeholder="Full name" required="" onkeyup="checkAvailability(document.signupFormForm.newLogin.value)" onfocusout="checkAvailability(document.signupFormForm.newLogin.value,\"displayName\")"/> 
 		<input name="newEmail" type="email" class="form-control" placeholder="Email address" required="" /> 
 		<input name="newPassword" type="password" class="form-control" placeholder="Password" required="" /> 
 		<button name="submitok" class="btn btn-lg btn-primary btn-block" type="submit">Signup <span class="glyphicon glyphicon-ok"></span></button> 

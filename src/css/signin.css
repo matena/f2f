@@ -6,6 +6,7 @@ body {
 
 .form-signin {
   max-width: 330px;
+  min-height: 60px;
   padding: 15px;
   margin: 0 auto;
   background-color: #E8F12B;

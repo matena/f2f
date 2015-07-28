@@ -1,18 +1,45 @@
+ALTER TABLE FamilyMembers DROP FOREIGN KEY FKFamilyMemb286753;
+ALTER TABLE FamilyMembers DROP FOREIGN KEY FKFamilyMemb316795;
+ALTER TABLE BlogEntries DROP FOREIGN KEY FKBlogEntrie198559;
+ALTER TABLE BlogEntries DROP FOREIGN KEY FKBlogEntrie436693;
+ALTER TABLE Conversation DROP FOREIGN KEY FKConversati385998;
+ALTER TABLE Conversation DROP FOREIGN KEY FKConversati106925;
+ALTER TABLE ReplyList DROP FOREIGN KEY FKReplyList682246;
+ALTER TABLE Post DROP FOREIGN KEY FKPost20125;
+ALTER TABLE StayRequest DROP FOREIGN KEY FKStayReques23627;
+ALTER TABLE HostPlace DROP FOREIGN KEY FKHostPlace560642;
+ALTER TABLE SocialLogin DROP FOREIGN KEY FKSocialLogi472902;
+ALTER TABLE SocialLogin DROP FOREIGN KEY FKSocialLogi22105;
+DROP TABLE IF EXISTS `User`;
+DROP TABLE IF EXISTS Member;
+DROP TABLE IF EXISTS FamilyMembers;
+DROP TABLE IF EXISTS Blogs;
+DROP TABLE IF EXISTS Post;
+DROP TABLE IF EXISTS BlogEntries;
+DROP TABLE IF EXISTS Conversation;
+DROP TABLE IF EXISTS NaughtyWords;
+DROP TABLE IF EXISTS Logs;
+DROP TABLE IF EXISTS HostPlace;
+DROP TABLE IF EXISTS ReplyList;
+DROP TABLE IF EXISTS StayRequest;
+DROP TABLE IF EXISTS SocialLogin;
+DROP TABLE IF EXISTS SocialProviders;
 CREATE TABLE `User` (
-  userId      int(10) NOT NULL AUTO_INCREMENT comment 'Auto-incrementing primary key', 
-  login       varchar(20) NOT NULL UNIQUE comment 'Login name to the system', 
-  password    varchar(255) NOT NULL, 
-  email       varchar(255) NOT NULL UNIQUE comment 'E-mail address for the account. This will also be used for retrieving lost password.', 
-  createDate  date NOT NULL, 
-  lastLogin   datetime NOT NULL, 
-  phone       varchar(20), 
-  coordLat    varchar(20), 
-  coordLon    varchar(20), 
-  keywords    varchar(1023), 
-  galleryLink varchar(1023), 
-  displayName varchar(30) NOT NULL, 
-  premium     tinyint(1) NOT NULL, 
-  userLevel   tinyint NOT NULL, 
+  userId              int(10) NOT NULL AUTO_INCREMENT comment 'Auto-incrementing primary key', 
+  login               varchar(20) NOT NULL UNIQUE comment 'Login name to the system', 
+  password            varchar(255) NOT NULL, 
+  email               varchar(255) NOT NULL UNIQUE comment 'E-mail address for the account. This will also be used for retrieving lost password.', 
+  createDate          date NOT NULL, 
+  lastLogin           datetime NOT NULL, 
+  phone               varchar(20), 
+  coordLat            varchar(20), 
+  coordLon            varchar(20), 
+  keywords            varchar(1023), 
+  galleryLink         varchar(1023), 
+  displayName         varchar(30) NOT NULL, 
+  premiumExpiry       datetime NULL comment 'This field represents the subscription to premium features expiration. This field is Null when the user does not have a premium account.', 
+  userLevel           tinyint NOT NULL, 
+  profileLastReviewed datetime NULL, 
   PRIMARY KEY (userId), 
   UNIQUE INDEX (userId)) CHARACTER SET UTF8;
 CREATE TABLE Member (
@@ -91,6 +118,7 @@ CREATE TABLE HostPlace (
   bareNecessities  tinyint(1), 
   smokeAlarm       tinyint(1), 
   longStay         tinyint(1), 
+  lastEdited       datetime NULL, 
   CONSTRAINT limitations 
     PRIMARY KEY (hostUserId)) CHARACTER SET UTF8;
 CREATE TABLE ReplyList (
@@ -102,6 +130,20 @@ CREATE TABLE StayRequest (
   nrPerson       int(10), 
   startDate      date, 
   finishDate     date) CHARACTER SET UTF8;
+CREATE TABLE SocialLogin (
+  userId                    int(10) NOT NULL, 
+  providerId                int(10) NOT NULL, 
+  socialUserName            varchar(255) NOT NULL, 
+  SocialProvidersproviderId int(10), 
+  PRIMARY KEY (userId, 
+  providerId), 
+  UNIQUE INDEX (userId)) CHARACTER SET UTF8;
+CREATE TABLE SocialProviders (
+  providerId   int(10) NOT NULL AUTO_INCREMENT, 
+  providerName varchar(255), 
+  providerURL  varchar(255), 
+  PRIMARY KEY (providerId), 
+  UNIQUE INDEX (providerId)) CHARACTER SET UTF8;
 ALTER TABLE FamilyMembers ADD INDEX FKFamilyMemb286753 (userId), ADD CONSTRAINT FKFamilyMemb286753 FOREIGN KEY (userId) REFERENCES `User` (userId);
 ALTER TABLE FamilyMembers ADD INDEX FKFamilyMemb316795 (memberId), ADD CONSTRAINT FKFamilyMemb316795 FOREIGN KEY (memberId) REFERENCES Member (memberId);
 ALTER TABLE BlogEntries ADD INDEX FKBlogEntrie198559 (postId), ADD CONSTRAINT FKBlogEntrie198559 FOREIGN KEY (postId) REFERENCES Post (postId);
@@ -112,3 +154,5 @@ ALTER TABLE ReplyList ADD INDEX FKReplyList682246 (conversationId), ADD CONSTRAI
 ALTER TABLE Post ADD INDEX FKPost20125 (postId), ADD CONSTRAINT FKPost20125 FOREIGN KEY (postId) REFERENCES ReplyList (conversationId);
 ALTER TABLE StayRequest ADD INDEX FKStayReques23627 (conversationId), ADD CONSTRAINT FKStayReques23627 FOREIGN KEY (conversationId) REFERENCES Conversation (conversationId);
 ALTER TABLE HostPlace ADD INDEX FKHostPlace560642 (hostUserId), ADD CONSTRAINT FKHostPlace560642 FOREIGN KEY (hostUserId) REFERENCES `User` (userId);
+ALTER TABLE SocialLogin ADD INDEX FKSocialLogi472902 (userId), ADD CONSTRAINT FKSocialLogi472902 FOREIGN KEY (userId) REFERENCES `User` (userId);
+ALTER TABLE SocialLogin ADD INDEX FKSocialLogi22105 (SocialProvidersproviderId), ADD CONSTRAINT FKSocialLogi22105 FOREIGN KEY (SocialProvidersproviderId) REFERENCES SocialProviders (providerId);
