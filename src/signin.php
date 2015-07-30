@@ -147,73 +147,83 @@ session_start(); ?>
 		  }
 		</script>
 		
-		<!--- facebook script -->
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1419150145041906";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
-    <div class="container" align="right">
-		<a class="btn btn-default btn-lg">
-			Language <span class="glyphicon glyphicon-globe"></span> 
-		</a>
-    </div>
-	<div class="container">
+		<!--- facebook script 
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1419150145041906";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+		-->
 		
-		<!-- display alerts and warnings --->
+		
+    <div class="container"> 		  <!-- /container  - wrapping element for bootstrap -->		
+
+	<!-- display alerts and warnings --->
 		<div class="row">
-						
-			<!-- New login -->
-			<?php if (isset($_SESSION['newLogin']) AND (!isset($_SESSION['newLoginInfoShown']))):?>
-			<!--- Display the account creation information -->
-				<div class="alert alert-success" role="alert">
-					<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<strong>Account created!</strong> You successfully created your account. Please proceed to singin.
-				</div>
-			<?php
-				$_SESSION['newLoginInfoShown'] = true;
-				endif;
-			?>
-			<!-- Warning -->
-			<?php if (isset($_SESSION['warning'])):?>
-			<!--- Display the account creation information -->
-				<div class="alert alert-warning" role="alert">
-					<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<strong>Watch out!</strong><br/>
-					<?=$_SESSION['warning']?>
-				</div>
-			<?php
-				unset($_SESSION['warning']);
-				endif;
-			?>
-			
-			<!-- Logout confirm -->
-			<?php if (isset($_GET['logout'])):
-				// Destroy the session...
-				session_destroy();
-			?>
-				<!--- ... and display the account creation information -->
-				<div class="alert alert-success" role="alert">
-					<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<strong>Successfully signed out</strong><br/>
-					You successfully signed out from your session on Family 2 family. We look forward to have you back soon!
-					<?=$_SESSION['warning']?>
-				</div>
-			<?php
-				endif;
-			?>
+			<div class="col-xs-6 col-md-2 col-md-offset-8">
+				<p class="text-right">
+					<a class="btn btn-default btn-lg">
+					Language <span class="glyphicon glyphicon-globe"></span> 
+					</a>
+				</p>
+			</div>
 		</div>
+		<div class="row">
+		
+			<div class="col-xs-12">		
+				<!-- New login -->
+				<?php if (isset($_SESSION['newLogin']) AND (!isset($_SESSION['newLoginInfoShown']))):?>
+				<!--- Display the account creation information -->
+					<div class="alert alert-success" role="alert">
+						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<strong>Account created!</strong> You successfully created your account. Please proceed to singin.
+					</div>
+				<?php
+					$_SESSION['newLoginInfoShown'] = true;
+					endif;
+				?>
+				<!-- Warning -->
+				<?php if (isset($_SESSION['warning'])):?>
+				<!--- Display the account creation information -->
+					<div class="alert alert-warning" role="alert">
+						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<strong>Watch out!</strong><br/>
+						<?=$_SESSION['warning']?>
+					</div>
+				<?php
+					unset($_SESSION['warning']);
+					endif;
+				?>
+				
+				<!-- Logout confirm -->
+				<?php if (isset($_GET['logout'])):
+					// Destroy the session...
+					session_destroy();
+				?>
+					<!--- ... and display the account creation information -->
+					<div class="alert alert-success" role="alert">
+						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<strong>Successfully signed out</strong><br/>
+						You successfully signed out from your session on Family 2 family. We look forward to have you back soon!
+						<?=$_SESSION['warning']?>
+					</div>
+				<?php
+					endif;
+				?>
+			</div>
+			
+
+		</div>
+		
 		<div class="row">	
 			<h1 class="text-center">Family 2 family
 			<br />	
 			<small>... this is where families meet worldwide</small></h1>
 		</div>
 			  
-		  <!-- /container -->
 	<!-- original social buttons:
 		
 		<div class="row" height="30">
@@ -235,51 +245,54 @@ session_start(); ?>
 	--->
 		
 		<div class="row">
-			<form class="form-signin" style="min-height:150px">
-				<div class="col-sm-12">
-					<a href="login.php?provider=facebook" class="btn btn-block btn-social btn-facebook">
-							<i class="fa fa-facebook"></i> Sign in with Facebook
-					</a>
-					<a href="login.php?provider=google" class="btn btn-block btn-social btn-google">
-						    <i class="fa fa-google"></i> Sign in with Google+
-					</a>
-					<a href="login.php?provider=twitter" class="btn btn-block btn-social btn-twitter">
-							<i class="fa fa-twitter"></i> Sign in with Twitter
-					</a>
-					
-				</div>	
-			 </form>
-		</div>
-		
-				
-		<div class="row">
-	
-			<div class="text-center">
-				<p halign="center">
-					<h5><i>or</i></h5>
+			<div class="col-sm-4 col-sm-offset-1">
+				<form class="form-signin" style="min-height:150px">
+						<a href="login.php?provider=facebook" class="btn btn-block btn-social btn-facebook">
+								<i class="fa fa-facebook"></i> Sign in with Facebook
+						</a>
+						<a href="login.php?provider=google" class="btn btn-block btn-social btn-google">
+								<i class="fa fa-google"></i> Sign in with Google+
+						</a>
+						<a href="login.php?provider=twitter" class="btn btn-block btn-social btn-twitter">
+								<i class="fa fa-twitter"></i> Sign in with Twitter
+						</a>
+						
+				 </form>
+			</div>	
+			
+			<div class="col-sm-1" class="text-center">
+				<p class="text-center" valign="center">
+					<br/>
+					<br/>
+					<br/>
+					<i>or</i>
 				</p>
-				</div>
-		<form class="form-signin" role="form" action="./dashboard.php" method="post">
-				<h2 class="form-signin-heading"><img src="./img/koala_in_tree_cut_rev.png" alt="Family koala" class="img-rounded" height="40" width="40" /> Log In</h2>
-				<!-- display either new login resulting from the signup page or just a simple placeholder saying: Login -->
-				<input name="login" type="login" class="form-control" required="" autofocus="" <?php if (isset($_SESSION['newLogin'])) { 
-					//			Put new login or a placeholder 
-						echo "value=\"" . $_SESSION['newLogin'] . "\"";
-					} else {
-						echo 'placeholder="Login"';
-					} 
-				?>  /> 
-				<input name="pwd" type="password" class="form-control" placeholder="Password" required="" /> 
-				<label class="checkbox">
-				<input type="checkbox" value="remember-me" /> Remember me</label> 
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Login <span class="glyphicon glyphicon-ok"></span></button> 
-				<div class="btn-group btn-block btn-group-lg" style="halign:center">
-					<a class="btn btn-default" href="./signup.php#signupform"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Join f2f!</a>
-					<a class="btn btn-default" href="./signup.php#generalinfo">Learn more!</a>
-				</div>
-			  </form>
+			</div>
+			
+			<div class="col-sm-4">
+			
+				<form class="form-signin" role="form" action="./dashboard.php" method="post">
+					<h2 class="form-signin-heading"><img src="./img/koala_in_tree_cut_rev.png" alt="Family koala" class="img-rounded" height="40" width="40" /> Log In</h2>
+					<!-- display either new login resulting from the signup page or just a simple placeholder saying: Login -->
+					<input name="login" type="login" class="form-control" required="" autofocus="" <?php if (isset($_SESSION['newLogin'])) { 
+						//			Put new login or a placeholder 
+							echo "value=\"" . $_SESSION['newLogin'] . "\"";
+						} else {
+							echo 'placeholder="Login"';
+						} 
+					?>  /> 
+					<input name="pwd" type="password" class="form-control" placeholder="Password" required="" /> 
+					<label class="checkbox">
+					<input type="checkbox" value="remember-me" /> Remember me</label> 
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Login <span class="glyphicon glyphicon-ok"></span></button> 
+					<div class="btn-group btn-block btn-group-lg" style="halign:center">
+						<a class="btn btn-default" href="./signup.php#signupform"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Join f2f!</a>
+						<a class="btn btn-default" href="./signup.php#generalinfo">Learn more!</a>
+					</div>
+				</form>
+			</div>
 		</div>
-    </div>
+    </div> <!--- container --->
 	
 	<!-- Bootstrap core JavaScript
     ================================================== -->
