@@ -256,9 +256,12 @@ session_start(); ?>
 						<a href="login.php?provider=twitter" class="btn btn-block btn-social btn-twitter">
 								<i class="fa fa-twitter"></i> Sign in with Twitter
 						</a>
-						
+				 <p>
+					<i>If you are concerned about your privacy, you might consider not allowing third-party applications (e.g. Facebook) to manage your private data. We will not send your personal details to third-party apps without your prior explicit consent - e.g. when sharing a post or article.</i>
+				</p>
+		
 				 </form>
-			</div>	
+			 </div>	
 			
 			<div class="col-sm-1" class="text-center">
 				<p class="text-center" valign="center">
