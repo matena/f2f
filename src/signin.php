@@ -17,9 +17,9 @@ session_start(); ?>
     <!-- Custom styles for this template -->
     <link href="./css/signin.css" rel="stylesheet" />
 	<!--- for nice social login buttons: font-awesome -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
     <!--- for nice social login buttons -->
-    <link href="./css/font-awesome.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap-social.css" rel="stylesheet" />
     
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -214,6 +214,8 @@ session_start(); ?>
 		</div>
 			  
 		  <!-- /container -->
+	<!-- original social buttons:
+		
 		<div class="row" height="30">
 			<form class="form-signin">
 			
@@ -228,6 +230,24 @@ session_start(); ?>
 						</div>
 					</span>
 				</div>
+			 </form>
+		</div>
+	--->
+		
+		<div class="row">
+			<form class="form-signin" style="min-height:150px">
+				<div class="col-sm-12">
+					<a href="login.php?provider=facebook" class="btn btn-block btn-social btn-facebook">
+							<i class="fa fa-facebook"></i> Sign in with Facebook
+					</a>
+					<a href="login.php?provider=google" class="btn btn-block btn-social btn-google">
+						    <i class="fa fa-google"></i> Sign in with Google+
+					</a>
+					<a href="login.php?provider=twitter" class="btn btn-block btn-social btn-twitter">
+							<i class="fa fa-twitter"></i> Sign in with Twitter
+					</a>
+					
+				</div>	
 			 </form>
 		</div>
 		
@@ -253,7 +273,7 @@ session_start(); ?>
 				<label class="checkbox">
 				<input type="checkbox" value="remember-me" /> Remember me</label> 
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Login <span class="glyphicon glyphicon-ok"></span></button> 
-				<div class="btn-group btn-block btn-group-lg">
+				<div class="btn-group btn-block btn-group-lg" style="halign:center">
 					<a class="btn btn-default" href="./signup.php#signupform"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Join f2f!</a>
 					<a class="btn btn-default" href="./signup.php#generalinfo">Learn more!</a>
 				</div>
