@@ -1,3 +1,4 @@
+This file is made to satisfy licences and also to promote projects I have been using in f2f projects.
 Similar projects:
 Couchsurfing.com
 Workaday.com
@@ -8,3 +9,10 @@ www.faticon.com
 
 Version control system:
 www.github.com
+ 
+Social login:
+- buttons - http://lipis.github.io/bootstrap-social/
+- php library - http://hybridauth.sourceforge.net/
+
+Background carussel:
+- bootstrap
