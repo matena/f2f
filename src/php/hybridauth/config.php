@@ -45,18 +45,18 @@ return
 			),
 
 			// windows live
-			"Live" => false (
-				"enabled" => true,
+			"Live" => array (
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 
-			"LinkedIn" => false (
-				"enabled" => true,
+			"LinkedIn" => array (
+				"enabled" => false,
 				"keys"    => array ( "key" => "", "secret" => "" )
 			),
 
-			"Foursquare" => false (
-				"enabled" => true,
+			"Foursquare" => array (
+				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" )
 			),
 		),
@@ -65,7 +65,7 @@ return
 		// You can also set it to
 		// - "error" To log only error messages. Useful in production
 		// - "info" To log info and error messages (ignore debug messages)
-		"debug_mode" => false,
+		"debug_mode" => info,
 
 		// Path to file writable by the web server. Required if 'debug_mode' is not false
 		"debug_file" => "",

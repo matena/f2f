@@ -115,9 +115,9 @@
 						  </ul>
 						</li>
 						<li>
-						   <form class="navbar-form navbar-right" role="search" data-toggle="tooltip" data-placement="bottom" title="Search content and profiles">
+						   <form class="navbar-form navbar-right" role="search">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Search..." size=8/>
+									<input type="text" class="form-control" placeholder="Search..." size=8 data-toggle="tooltip" data-placement="bottom" title="Search content and profiles"/>
 								</div>
 								<button type="submit" class="btn btn-default" style="margin-right:20px"><span class="glyphicon glyphicon-search"></span></button>
 								<a href="signin.php?logout=true" role="button" alt="Sign out" class="btn btn-default" style="margin-right:20px" data-toggle="tooltip" data-placement="bottom" title="Logout"><span class="glyphicon glyphicon-off"></span></a>							

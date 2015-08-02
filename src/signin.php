@@ -1,5 +1,7 @@
 <?php 
-session_start(); ?>
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -247,16 +249,17 @@ session_start(); ?>
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-1">
 				<form class="form-signin" style="min-height:150px">
-						<a href="login.php?provider=facebook" class="btn btn-block btn-social btn-facebook">
+						<a href="./dashboard.php?provider=facebook" class="btn btn-block btn-social btn-facebook">
 								<i class="fa fa-facebook"></i> Sign in with Facebook
 						</a>
-						<a href="login.php?provider=google" class="btn btn-block btn-social btn-google">
+						<a href="./dashboard.php?provider=google" class="btn btn-block btn-social btn-google">
 								<i class="fa fa-google"></i> Sign in with Google+
 						</a>
-						<a href="login.php?provider=twitter" class="btn btn-block btn-social btn-twitter">
+						<a href="./dashboard.php?provider=twitter" class="btn btn-block btn-social btn-twitter">
 								<i class="fa fa-twitter"></i> Sign in with Twitter
 						</a>
 				 <p>
+					<br/>
 					<i>If you are concerned about your privacy, you might consider not allowing third-party applications (e.g. Facebook) to manage your private data. We will not send your personal details to third-party apps without your prior explicit consent - e.g. when sharing a post or article.</i>
 				</p>
 		

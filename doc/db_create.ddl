@@ -11,8 +11,8 @@ CREATE TABLE `User` (
   keywords            varchar(1023), 
   galleryLink         varchar(1023), 
   displayName         varchar(30) NOT NULL, 
-  userLevel           tinyint NOT NULL, 
   premiumExpiry       datetime NULL comment 'This field represents the subscription to premium features expiration. This field is Null when the user does not have a premium account.', 
+  userLevel           tinyint NOT NULL, 
   profileLastReviewed datetime NULL, 
   PRIMARY KEY (userId), 
   UNIQUE INDEX (userId)) CHARACTER SET UTF8;
@@ -106,16 +106,18 @@ CREATE TABLE StayRequest (
   finishDate     date) CHARACTER SET UTF8;
 CREATE TABLE SocialLogin (
   userId                    int(10) NOT NULL, 
-  providerId                int(10) NOT NULL comment 'Id of the social network provider:
-1 - facebook
-2 - google
-3 - twitter', 
-  providerUserId            varchar(31) NOT NULL comment 'Unique user identificator provided by the social login provider.', 
+  providerId                int(10) NOT NULL, 
   socialUserName            varchar(255) NOT NULL, 
   SocialProvidersproviderId int(10), 
   PRIMARY KEY (userId, 
   providerId), 
   UNIQUE INDEX (userId)) CHARACTER SET UTF8;
+CREATE TABLE SocialProviders (
+  providerId   int(10) NOT NULL AUTO_INCREMENT, 
+  providerName varchar(255), 
+  providerURL  varchar(255), 
+  PRIMARY KEY (providerId), 
+  UNIQUE INDEX (providerId)) CHARACTER SET UTF8;
 ALTER TABLE FamilyMembers ADD INDEX FKFamilyMemb286753 (userId), ADD CONSTRAINT FKFamilyMemb286753 FOREIGN KEY (userId) REFERENCES `User` (userId);
 ALTER TABLE FamilyMembers ADD INDEX FKFamilyMemb316795 (memberId), ADD CONSTRAINT FKFamilyMemb316795 FOREIGN KEY (memberId) REFERENCES Member (memberId);
 ALTER TABLE BlogEntries ADD INDEX FKBlogEntrie198559 (postId), ADD CONSTRAINT FKBlogEntrie198559 FOREIGN KEY (postId) REFERENCES Post (postId);
@@ -127,3 +129,4 @@ ALTER TABLE Post ADD INDEX FKPost20125 (postId), ADD CONSTRAINT FKPost20125 FORE
 ALTER TABLE StayRequest ADD INDEX FKStayReques23627 (conversationId), ADD CONSTRAINT FKStayReques23627 FOREIGN KEY (conversationId) REFERENCES Conversation (conversationId);
 ALTER TABLE HostPlace ADD INDEX FKHostPlace560642 (hostUserId), ADD CONSTRAINT FKHostPlace560642 FOREIGN KEY (hostUserId) REFERENCES `User` (userId);
 ALTER TABLE SocialLogin ADD INDEX FKSocialLogi472902 (userId), ADD CONSTRAINT FKSocialLogi472902 FOREIGN KEY (userId) REFERENCES `User` (userId);
+ALTER TABLE SocialLogin ADD INDEX FKSocialLogi22105 (SocialProvidersproviderId), ADD CONSTRAINT FKSocialLogi22105 FOREIGN KEY (SocialProvidersproviderId) REFERENCES SocialProviders (providerId);

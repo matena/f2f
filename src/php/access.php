@@ -1,31 +1,82 @@
 <?php // access.php
 include_once 'common.php';
 include_once 'db.php';
+include_once 'console.php'; //debugging function
+require_once 'hybridauth/Hybrid/Auth.php'; //hybridauth social login
+ 
 session_start();
 
 $login = isset($_POST['login']) ? $_POST['login'] : $_SESSION['login'];
 $userId = isset($_POST['userId']) ? $_POST['userId'] : $_SESSION['userId'];
 $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : $_SESSION['pwd'];
+$provider = isset($_REQUEST['provider']) ? $_REQUEST['provider'] : $_SESSION['auth_provider'];
 
-if((!isset($userId)) AND (!isset($login))) {
-  ?>
-<!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1;url=signin.php">
-        <!--<script type="text/javascript">
-            window.location.href = "./signin.php"
-        </script>
-		-->
-        <title>Family 2 family - redirection to login page</title>
-    </head>
-    <body>
-        Security is our primary concern, you will be redirected to the login page in a second. If you are not redirected automatically, follow the <a href='./signin.php'>link to login</a>.
-    </body>
-</html>
-  <?php
+
+if((!isset($userId)) AND (!isset($login)) AND (!isset($provider))) {
+	unset($_SESSION['userId']);
+	unset($_SESSION['pwd']);
+	$_SESSION['warning'] = "You have to login first! Please login using your family2family username and password or via a social network.";
+	back_to_signin(); //includes HTML with redirection to the signin page.
+	unset($provider);
   exit;
+}
+
+if(isset($provider)) {
+	
+	// the selected provider
+	$provider_name = $_REQUEST["provider"];
+	$_SESSION['auth_provider'] = $_REQUEST["provider"];
+	
+	try {
+		// include HybridAuth library (done in header)
+		$config   = dirname(__FILE__) . '/hybridauth/config.php';
+		debug_to_console($config);
+		// initialize Hybrid_Auth class with the config file
+		$hybridauth = new Hybrid_Auth($config);
+ 
+		// try to authenticate with the selected provider
+		$adapter = $hybridauth->authenticate($provider_name);
+ 
+		// then grab the user profile
+		$user_profile = $adapter->getUserProfile();
+	}
+ 
+	// something went wrong?
+	catch( Exception $e ) {
+		debug_to_console($e);
+		unset($_SESSION['userId']);
+		unset($_SESSION['pwd']);
+		$_SESSION['warning'] = $e;
+		//$_SESSION['warning'] = "There was an error using $provider authentication. Please try to login using your family2family username and password or try to log-in again please.";
+		back_to_signin(); //includes HTML with redirection to the signin page.
+		unset($provider);
+		exit;
+	}
+ 
+	// check if the current user already have authenticated using this provider before
+	$user_exist = get_user_by_provider_and_id( $provider_name, $user_profile->identifier );
+	
+	debug_to_console($user_exist);
+ 
+	// if the used didn't authenticate using the selected provider before
+	// we create a new entry on database.users for him
+	if( ! $user_exist ) {
+		create_new_hybridauth_user(
+			$user_profile->email,
+			$user_profile->firstName,
+			$user_profile->lastName,
+			$provider_name,
+			$user_profile->identifier
+		);
+	}
+ 
+	// set the user as connected
+	$_SESSION['displayName'] = mysql_result($result,0,'displayName');
+	$_SESSION['userId'] = mysql_result($result,0,'userId');
+	$_SESSION["user_connected"] = true;	
+	
+	unset($provider);
+	exit;
 }
 
 $_SESSION['login'] = $login;
@@ -47,31 +98,12 @@ if (mysql_num_rows($result) == 0) {
   unset($_SESSION['pwd']);
   $_SESSION['warning'] = "We did not recognize your user details (login or password), or you are not a
      registered user of Family2family. To try log-in again please.";
-  ?>
-  <!DOCTYPE html">
-  <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="1;url=signin.php">
-    <script type="text/javascript">
-            window.location.href = "./signin.php"
-    </script>
-    <title>Family 2 family -  Access Denied - redirect to login</title>
-        
-  </head>
-  <body>
-  <h1>Out of luck!</h1>
-  <p>We did not recognize your user details (login or password), or you are not a
-     registered user of Family2family. To try logging in again, please follow to
-     <a href="./singin.php">login page</a>.
-   </p>
-  </body>
-  </html>
-  <?php
-  exit;
+	back_to_signin(); //includes HTML with redirection to the signin page.
+	 exit;
 }
 // retrieving full user name
-$displayName = mysql_result($result,0,'displayName');
+$_SESSION['displayName'] = mysql_result($result,0,'displayName');
 $_SESSION['userId'] = mysql_result($result,0,'userId');
+$_SESSION["user_connected"] = true;
 
 ?>

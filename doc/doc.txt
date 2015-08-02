@@ -1,0 +1,5 @@
+Files to be updated upon site move to another provider:
+
+------------------------------------
+signup.php
+signin.php
