@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Family 2 family - dashboard</title>
+    <title>Family 2 family - Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.css" rel="stylesheet">
@@ -232,8 +232,7 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
-							<iframe src="./svg_buttons_small.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
-							</iframe>
+							<?php include 'php/svg_btns_click_small.php'; ?>
 							<p>
 								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
@@ -251,8 +250,7 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
-							<iframe src="./svg_buttons_small2.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
-							</iframe>
+							<?php include 'php/svg_btns_click_small.php'; ?>
 							<p>
 								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
@@ -269,8 +267,7 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
-							<iframe src="./svg_buttons_small.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
-							</iframe>
+							<?php include 'php/svg_btns_click_small.php'; ?>
 							<p>
 								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
@@ -289,8 +286,7 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
-							<iframe src="./svg_buttons_small2.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
-							</iframe>
+							<?php include 'php/svg_btns_click_small.php'; ?>
 							<p>
 								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
@@ -307,8 +303,7 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
-							<iframe src="./svg_buttons_small.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
-							</iframe>
+							<?php include 'php/svg_btns_click_small.php'; ?>
 							<p>
 								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>
@@ -325,8 +320,7 @@
 							<p>
 								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 							</p>
-							<iframe src="./svg_buttons_small2.html" frameborder="0" style="border:0; padding=0px" scrolling="no" width="100%" height="35px">
-							</iframe>
+							<?php include 'php/svg_btns_click_small.php'; ?>
 							<p>
 								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
 							</p>

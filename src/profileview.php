@@ -1,4 +1,6 @@
-<?php include './php/access.php'; ?>
+<?php include './php/access.php';
+include_once './php/common.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,26 +64,19 @@
 					<div class="alert alert-info alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					<strong>Last profile revision</strong><br/>
-					You last revised your <strong><?=$_SESSION['login']?></strong> profile on the 
-<?php
-dbConnect("matena");
-$query = "SELECT profileLastReviewed FROM User WHERE
-        login = '$_SESSION['login']'";
-$result = mysql_query($query);
-if (!$result) {
-  error('A database error occurred while checking your '.
-        'login details.\\nIf this error persists, please '.
-        'contact f2f.support@kayak.webz.cz.');
-}
-
-if (mysql_num_rows($result) == 0) {
-  unset($_SESSION['userId']);
-  
-} else {
-	$_SESSION['lastReviewed'] = mysql_result($result,0,'profileLastReviewed');
-}
+					You last revised your <strong><?=$_SESSION['login']?></strong> profile on <strong>  
+					<?php
+						$lastReviewed = $_SESSION['profileLastReviewed'];
+						echo date("D, d M y H:i:s O",strtotime($lastReviewed)) . "<br/><small><i>This is time on the server, not your local time </i></small>" ;
+						dbConnect("matena");
+						$userId = $_SESSION['userId'];
+						$mysql_date_now = date("Y-m-d H:i:s frac");
+						$query = "UPDATE User SET profileLastReviewed = '$mysql_date_now' WHERE userId = '$userId' LIMIT 1";
+						$result = mysql_query($query);				
 					
-				</div>
+					?> 
+					</strong>.
+					
 
 				</div>
 			</div>

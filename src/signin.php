@@ -205,12 +205,11 @@ session_start();
 					// Destroy the session...
 					session_destroy();
 				?>
-					<!--- ... and display the account creation information -->
+					<!--- ... and display the logout information -->
 					<div class="alert alert-success" role="alert">
 						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 						<strong>Successfully signed out</strong><br/>
 						You successfully signed out from your session on Family 2 family. We look forward to have you back soon!
-						<?=$_SESSION['warning']?>
 					</div>
 				<?php
 					endif;

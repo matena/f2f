@@ -6,6 +6,8 @@
         $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
 
     echo $output;
+	
+	error_log($data, 3, "php://stdout");
 }
 
 ?>

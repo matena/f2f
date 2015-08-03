@@ -68,5 +68,5 @@ return
 		"debug_mode" => info,
 
 		// Path to file writable by the web server. Required if 'debug_mode' is not false
-		"debug_file" => "",
+		"debug_file" => "./auth.log",
 	);
