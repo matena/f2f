@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
+	<LINK REL="SHORTCUT ICON" HREF="http://family2family.byethost33.com/favicon.ico">
+
 
     <title>Family 2 family - Dashboard</title>
 

@@ -1,0 +1,20 @@
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Enter Hybrid_Auth::initialize()
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Hybrid_Auth::initialize(). PHP version: 5.4.41
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth version: 2.4.1
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth called from: http://family2family.byethost33.com/php/hybridauth/?hauth.start=Facebook&hauth.time=1438893350
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- PHP open_basedir is on. http://php.net/open-basedir.
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Hybrid_Auth initialize: check if any error is stored on the endpoint...
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Hybrid_Auth initialize: no error found. initialization succeed.
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Enter Hybrid_Provider_Adapter::factory( Facebook )
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Endpoint: call adapter [Facebook] loginBegin()
+INFO -- 114.42.8.185 -- 2015-08-06T22:35:57+02:00 -- Enter Hybrid_Auth::redirect( https://www.facebook.com/dialog/oauth?client_id=1419150145041906&redirect_uri=family2family.byethost33.com%2Fphp%2Fhybridauth%2F%3Fhauth.done%3DFacebook&state=d54e68ab180c16bc61614dc279a0f19c&sdk=php-sdk-3.2.3&scope=email%2C+user_about_me%2C+user_birthday%2C+user_hometown%2C+user_website%2C+read_stream%2C+publish_actions%2C+read_friendlists&display=page, PHP )
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Enter Hybrid_Auth::initialize()
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Hybrid_Auth::initialize(). PHP version: 5.4.41
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth version: 2.4.1
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth called from: http://www.family2family.byethost33.com/php/hybridauth/index.php?hauth.start=Facebook&hauth.time=1439034162&ckattempt=1
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- PHP open_basedir is on. http://php.net/open-basedir.
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Hybrid_Auth initialize: check if any error is stored on the endpoint...
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Hybrid_Auth initialize: no error found. initialization succeed.
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Enter Hybrid_Provider_Adapter::factory( Facebook )
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Endpoint: call adapter [Facebook] loginBegin()
+INFO -- 114.42.1.248 -- 2015-08-08T14:21:31+02:00 -- Enter Hybrid_Auth::redirect( https://www.facebook.com/dialog/oauth?client_id=1419150145041906&redirect_uri=family2family.byethost33.com%2Fphp%2Fhybridauth%2F%3Fhauth.done%3DFacebook&state=64a7cf5dd0afdc4672284b02b129ccf0&sdk=php-sdk-3.2.3&scope=email%2C+user_about_me%2C+user_birthday%2C+user_hometown%2C+user_website%2C+read_stream%2C+publish_actions%2C+read_friendlists&display=page, PHP )

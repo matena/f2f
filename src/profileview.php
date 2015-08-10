@@ -10,7 +10,8 @@ include_once './php/common.php'; ?>
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
+	<LINK REL="SHORTCUT ICON" HREF="http://family2family.byethost.com/favicon.ico">
+	
     <title>Family 2 family - profile view</title>
 
     <!-- Bootstrap core CSS -->
@@ -68,7 +69,7 @@ include_once './php/common.php'; ?>
 					<?php
 						$lastReviewed = $_SESSION['profileLastReviewed'];
 						echo date("D, d M y H:i:s O",strtotime($lastReviewed)) . "<br/><small><i>This is time on the server, not your local time </i></small>" ;
-						dbConnect("matena");
+						dbConnect();
 						$userId = $_SESSION['userId'];
 						$mysql_date_now = date("Y-m-d H:i:s frac");
 						$query = "UPDATE User SET profileLastReviewed = '$mysql_date_now' WHERE userId = '$userId' LIMIT 1";

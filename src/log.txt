@@ -1,0 +1,2 @@
+2015-08-10 5:18:57 - DEBUG --> get_user_by_provider_and_id called with: google and 116054916559264560003 parameters 
+2015-08-10 5:18:57 - DEBUG --> database result object: Resource id #58 

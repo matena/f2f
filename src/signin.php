@@ -11,8 +11,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="Lukáš Matěna" />
-	<link rel="icon" href="favicon.ico" />
-    <LINK REL="SHORTCUT ICON" HREF="http://matena.free.fr/favicon.ico">
+	<link rel="icon" href="favicon.ico">
+	<LINK REL="SHORTCUT ICON" HREF="http://family2family.byethost33.com/favicon.ico">
 	<title>Family 2 family - Login Page</title>
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.css" rel="stylesheet" />
@@ -298,6 +298,13 @@ session_start();
 			</div>
 		</div>
     </div> <!--- container --->
+
+	<?php 
+		// Destroy the session as security measure if it has not been done before...
+		if (isset($_SESSION)) { 
+			session_destroy();
+		}
+	?>
 	
 	<!-- Bootstrap core JavaScript
     ================================================== -->

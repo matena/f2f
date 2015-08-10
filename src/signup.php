@@ -19,8 +19,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="icon" href="favicon.ico" />
-    <LINK REL="SHORTCUT ICON" HREF="http://matena.free.fr/favicon.ico"><title>Family 2 family - General information and signup page</title>
+    <link rel="icon" href="favicon.ico">
+	<LINK REL="SHORTCUT ICON" HREF="http://family2family.byethost.com/favicon.ico">
+	<title>Family 2 family - General information and signup page</title>
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
@@ -144,7 +145,7 @@ Vivamus vitae ullamcorper nunc, id gravida nisi. Cras blandit turpis non enim sa
  <?php
 } else {
     // Process signup submission arriving from the same page.
-    dbConnect('matena');
+    dbConnect();
     if ($_POST['newLogin']=='' or $_POST['newFullName']==''
       or $_POST['newEmail']=='') {
         error('One or more required fields were left blank.\\n'.
@@ -188,7 +189,7 @@ Your personal account for the Family 2 family project web
 has been created! To log in, proceed to the
 following address:
 
-    http://matena.free.fr/test/signin.php?login=/
+    http://family2family.byethost33.com/signin.php?login=/
 
 Your personal login and password are as
 follows:

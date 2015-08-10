@@ -1,0 +1,41 @@
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Enter Hybrid_Auth::initialize()
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Hybrid_Auth::initialize(). PHP version: 5.4.41
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth version: 2.4.1
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth called from: http://www.family2family.byethost33.com/dashboard.php?provider=facebook
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- PHP open_basedir is on. http://php.net/open-basedir.
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Hybrid_Auth initialize: check if any error is stored on the endpoint...
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Hybrid_Auth initialize: no error found. initialization succeed.
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Enter Hybrid_Auth::authenticate( facebook )
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Hybrid_Auth::authenticate( facebook ), User not connected to the provider. Try to authenticate..
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Hybrid_Auth::setup( facebook ), no stored params found for this provider. Initialize a new one for new session
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Enter Hybrid_Provider_Adapter::factory( facebook )
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Enter Hybrid_Provider_Adapter::login( Facebook ) 
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Enter [Facebook]::logout()
+INFO -- 114.42.30.176 -- 2015-08-04T02:48:23+02:00 -- Enter Hybrid_Auth::redirect( family2family.byethost33.com/php/hybridauth/?hauth.start=Facebook&hauth.time=1438649303, PHP )
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Enter Hybrid_Auth::initialize()
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Hybrid_Auth::initialize(). PHP version: 5.4.41
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth version: 2.4.1
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth called from: http://www.family2family.byethost33.com/dashboard.php?provider=facebook
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- PHP open_basedir is on. http://php.net/open-basedir.
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Hybrid_Auth initialize: check if any error is stored on the endpoint...
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Hybrid_Auth initialize: no error found. initialization succeed.
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Enter Hybrid_Auth::authenticate( facebook )
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Hybrid_Auth::authenticate( facebook ), User not connected to the provider. Try to authenticate..
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Hybrid_Auth::setup( facebook ), no stored params found for this provider. Initialize a new one for new session
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:09+02:00 -- Enter Hybrid_Provider_Adapter::factory( facebook )
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter Hybrid_Provider_Adapter::login( Facebook ) 
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter [Facebook]::logout()
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter Hybrid_Auth::redirect( family2family.byethost33.com/php/hybridauth/?hauth.start=Facebook&hauth.time=1438808470, PHP )
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter Hybrid_Auth::initialize()
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Hybrid_Auth::initialize(). PHP version: 5.4.41
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth version: 2.4.1
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Hybrid_Auth::initialize(). Hybrid_Auth called from: http://www.family2family.byethost33.com/dashboard.php?provider=facebook
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- PHP open_basedir is on. http://php.net/open-basedir.
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Hybrid_Auth initialize: check if any error is stored on the endpoint...
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Hybrid_Auth initialize: no error found. initialization succeed.
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter Hybrid_Auth::authenticate( facebook )
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Hybrid_Auth::authenticate( facebook ), User not connected to the provider. Try to authenticate..
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter Hybrid_Provider_Adapter::factory( facebook )
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter Hybrid_Provider_Adapter::login( Facebook ) 
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter [Facebook]::logout()
+INFO -- 114.36.4.102 -- 2015-08-05T23:01:10+02:00 -- Enter Hybrid_Auth::redirect( family2family.byethost33.com/php/hybridauth/?hauth.start=Facebook&hauth.time=1438808470, PHP )

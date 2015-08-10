@@ -1,7 +1,10 @@
 <?php // db.php
+require_once '/home/vol4_6/byethost33.com/b33_16498919/htdocs/thirdparty/KLogger.php'; //logging framework
+$log = new KLogger ( "log.txt" , KLogger::DEBUG );
 
-$dbhost = "sql.free.fr";
-$dbuser = 'matena';
+$dbhost = "sql202.byethost33.com";
+$dbname = "b33_16498919_f2f";
+$dbuser = 'b33_16498919';
 $dbpass = '12369874';
 
 $socialProviders = array(
@@ -10,13 +13,14 @@ $socialProviders = array(
 	"twitter"	=> 3,
 );
 
-function dbConnect($db='') {
-    global $dbhost, $dbuser, $dbpass;
+function dbConnect() {
+	
+    global $dbhost, $dbname, $dbuser, $dbpass;
     
     $dbcnx = @mysql_connect($dbhost, $dbuser, $dbpass)
 		or die('The site database appears to be down.');
 
-    if ($db!='' and !@mysql_select_db($db))
+    if ($dbname!='' and !@mysql_select_db($dbname))
         die('The site database is unavailable.');
     
 	return $dbcnx;
@@ -28,7 +32,8 @@ function dbConnect($db='') {
 * get the user data from database by email and password
 **/
 function get_user_by_email_and_password( $email, $password ) {
-	dbConnect("matena");
+	$log->LogDebug("get_user_by_email_and_password called with: $email and $password parameters");
+	dbConnect();
 	$query = "SELECT * FROM User WHERE email = '$email' AND password = PASSWORD('$password')";
 	$result = mysql_query($query);
 	if (!$result) {
@@ -43,8 +48,11 @@ function get_user_by_email_and_password( $email, $password ) {
 * get the user data from database by provider name and provider user id
 **/
 function get_user_by_provider_and_id( $provider_name, $provider_user_id ) {
+	global $log;
+	$log->LogDebug("get_user_by_provider_and_id called with: $provider_name and $provider_user_id parameters");
+	
 	$providerId = $socialProviders[$provider_name];
-	dbConnect("matena");
+	dbConnect();
 	$query = "SELECT * FROM SocialLogin WHERE providerId = '$social_list[$providerId]' AND providerUserId = '$provider_user_id'";
 	$result = mysql_query($query);
 	if (!$result) {
@@ -52,14 +60,16 @@ function get_user_by_provider_and_id( $provider_name, $provider_user_id ) {
         '$provider_name login details.\\nIf this error persists, please '.
         'contact f2f.support@kayak.webz.cz.');
 	}
+	$log->LogDebug("database result object: $result");
 	return $result -> fetch_object();
 }
 
 /*
 * get the user data from database by provider name and provider user id
 **/
-function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id )
-{
+function create_new_hybridauth_user( $email, $first_name, $last_name, $provider_name, $provider_user_id ) {
+	$log->LogDebug("create_new_hybridauth_user called with: $email, $first_name, $last_name, $provider_name and $provider_user_id parameters");
+	
 	// let generate a random password for the user
 	$password = md5( str_shuffle( "0123456789abcdefghijklmnoABCDEFGHIJ" ) );
  

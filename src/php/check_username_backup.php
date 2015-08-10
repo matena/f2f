@@ -4,7 +4,7 @@ include_once 'db.php';
 
 
 $loginRequired = $_GET['u'];
-$connect("matena");
+$connect();
 
 $query = "SELECT * FROM User WHERE '$field' = '$loginRequired'";
 $result = mysql_query($query);

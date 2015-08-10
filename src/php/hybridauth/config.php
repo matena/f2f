@@ -11,7 +11,7 @@
 
 return
 	array(
-		"base_url" => "matena.free.fr/test/hybridauth/",
+		"base_url" => "http://www.family2family.byethost33.com/php/hybridauth/",
 
 		"providers" => array (
 			// openid providers
@@ -65,7 +65,7 @@ return
 		// You can also set it to
 		// - "error" To log only error messages. Useful in production
 		// - "info" To log info and error messages (ignore debug messages)
-		"debug_mode" => info,
+		"debug_mode" => true,
 
 		// Path to file writable by the web server. Required if 'debug_mode' is not false
 		"debug_file" => "./auth.log",

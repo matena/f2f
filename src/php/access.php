@@ -2,10 +2,12 @@
 include_once 'common.php';
 include_once 'db.php';
 include_once 'console.php'; //debugging function
-require_once 'hybridauth/Hybrid/Auth.php'; //hybridauth social login
- 
+require_once '/home/vol4_6/byethost33.com/b33_16498919/htdocs/php/hybridauth/Hybrid/Auth.php'; //hybridauth social login
 session_start();
 
+// initialize Hybrid_Auth class with the config file
+$config_file_path = '/home/vol4_6/byethost33.com/b33_16498919/htdocs/php/hybridauth/config.php'; //hybridauth social login
+			
 $login = isset($_POST['login']) ? $_POST['login'] : $_SESSION['login'];
 $userId = isset($_POST['userId']) ? $_POST['userId'] : $_SESSION['userId'];
 $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : $_SESSION['pwd'];
@@ -38,11 +40,8 @@ if ($_SESSION['user_connected'] == true) {
 		
 		try {
 			// include HybridAuth library (done in header)
-			$config   = dirname(__FILE__) . '/hybridauth/config.php';
-			debug_to_console($config);
-			// initialize Hybrid_Auth class with the config file
-			$hybridauth = new Hybrid_Auth($config);
-	 
+			$hybridauth = new Hybrid_Auth( $config_file_path ); //hybridauth social login
+			
 			// try to authenticate with the selected provider
 			$adapter = $hybridauth->authenticate($provider_name);
 	 
@@ -93,7 +92,7 @@ if ($_SESSION['user_connected'] == true) {
 	
 	} else { //in case we don´t log-in using social buttons
 
-		dbConnect("matena");
+		dbConnect();
 		$query = "SELECT * FROM User WHERE
 				login = '$login' AND password = PASSWORD('$pwd')";
 		$result = mysql_query($query);
@@ -116,7 +115,7 @@ if ($_SESSION['user_connected'] == true) {
 		$_SESSION['userId'] = mysql_result($result,0,'userId');
 		$_SESSION['login'] = mysql_result($result,0,'login');
 		$_SESSION['user_connected'] = true;
-		$_SESSION['lastLoginDate'] = mysql_result($result,0,'lastLoginDate');
+		$_SESSION['lastLogin'] = mysql_result($result,0,'lastLogin');
 		$_SESSION['profileLastReviewed'] = mysql_result($result,0,'profileLastReviewed');
 	}
 }

@@ -1,5 +1,4 @@
 <?php
-include_once 'JSON.php';
 /**
 * HybridAuth
 * http://hybridauth.sourceforge.net | http://github.com/hybridauth/hybridauth
@@ -25,7 +24,6 @@ class Hybrid_Auth
 
 	public static $logger  = NULL;
 
-	
 	// --------------------------------------------------------------------
 
 	/**
@@ -43,7 +41,6 @@ class Hybrid_Auth
 
 	// --------------------------------------------------------------------
 
-	
 	/**
 	* Try to initialize Hybrid_Auth with given $config hash or file
 	*/
@@ -106,8 +103,6 @@ class Hybrid_Auth
 		Hybrid_Logger::info( "Hybrid_Auth::initialize(). PHP version: " . PHP_VERSION );
 		Hybrid_Logger::info( "Hybrid_Auth::initialize(). Hybrid_Auth version: " . Hybrid_Auth::$version );
 		Hybrid_Logger::info( "Hybrid_Auth::initialize(). Hybrid_Auth called from: " . Hybrid_Auth::getCurrentUrl() );
-		
-		
 
 		// PHP Curl extension [http://www.php.net/manual/en/intro.curl.php]
 		if ( ! function_exists('curl_init') ) {

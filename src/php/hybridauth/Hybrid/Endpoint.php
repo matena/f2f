@@ -207,6 +207,9 @@ class Hybrid_Endpoint {
 
 				$storage = new Hybrid_Storage();
 
+				if(!class_exists("Hybrid_Exception", false)){
+                    require_once realpath( dirname( __FILE__ ) )  . "/Exception.php";
+                }
 				// Check if Hybrid_Auth session already exist
 				if ( ! $storage->config( "CONFIG" ) ) {
 
