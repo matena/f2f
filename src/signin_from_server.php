@@ -179,7 +179,7 @@ session_start();
 				<!-- New login -->
 				<?php if (isset($_SESSION['newLogin']) AND (!isset($_SESSION['newLoginInfoShown']))):?>
 				<!--- Display the account creation information -->
-					<div class="alert alert-success alert-dismissible" role="alert">
+					<div class="alert alert-success" role="alert">
 						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 						<strong>Account created!</strong> You successfully created your account. Please proceed to singin.
 					</div>
@@ -187,15 +187,23 @@ session_start();
 					$_SESSION['newLoginInfoShown'] = true;
 					endif;
 				?>
-
-				<!--- Display session variable success/info/alert/danger and unset it -->	
-				<?php include './php/session_bootstrap_alert.php'; ?>
+				<!-- Warning -->
+				<?php if (isset($_SESSION['warning'])):?>
+				<!--- Display the account creation information -->
+					<div class="alert alert-warning" role="alert">
+						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<strong>Watch out!</strong><br/>
+						<?=$_SESSION['warning']?>
+					</div>
+				<?php
+					unset($_SESSION['warning']);
+					endif;
+				?>
 				
 				<!-- Logout confirm -->
 				<?php if (isset($_GET['logout'])):
 					// Destroy the session...
 					session_destroy();
-					$session_destroyed = true;
 				?>
 					<!--- ... and display the logout information -->
 					<div class="alert alert-success" role="alert">
@@ -293,7 +301,7 @@ session_start();
 
 	<?php 
 		// Destroy the session as security measure if it has not been done before...
-		if (!$session_destroyed AND isset($_SESSION)) { 
+		if (isset($_SESSION)) { 
 			session_destroy();
 		}
 	?>

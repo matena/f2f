@@ -220,11 +220,6 @@
 <!--- search results -->	
 		
 		<div class="col-md-8 column">
-			
-			<!--- display session variable success/info/alert/danger and unset it -->	
-			<?php include './php/session_bootstrap_alert.php'; ?>
-
-				
 			<h3 class="text-success">
 				We have 24 families that fit your search:
 			</h3>
