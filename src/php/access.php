@@ -69,39 +69,32 @@ if ($_SESSION['user_connected'] == true) {
 		// SOCIAL AUTHENTIFICATION SUCCESS
 		
 		// check if the current user already have authenticated using this provider before
-		$social_user_exist = get_user_by_provider_and_id( $provider, $user_profile->identifier );
+		$s_userId = get_user_by_provider_and_id( $provider, $user_profile->identifier );
 		
-		if($social_user_exist ) {
+		if( !(is_null($s_userId))) {
 			// set the user as result
-			$log->LogDebug("Getting user with user_id: ". $social_user_exist["userId"]);
-			$result = get_user_by_id( $social_user_exist["userId"] );
+			$log->LogDebug("Getting user with user_id: ". $s_userId);
+			$result = get_user_by_id( $s_userId);
 			//we will use the result by the end of the file to populate the session variables
 
 		} else { // if the used didn't authenticate using the selected provider before
 				 // we create a new entry on database users for him
 		
-			$log->LogDebug("Going to create a new entry in SocialAuth db table.");
+			$log->LogDebug("User id for this provider not found in DB tabke SocialLogin .");
 					
-			//if we have this user (given the e-mail), just create the SocialAuth record,
+			//if we have this user (given the e-mail), just create the SocialLogin record,
 			//else create a new user
 			if (user_exists_by_field($user_profile->email, "email")) {
 				$log->LogDebug("We have this user (by e-mail: " . $user_profile->email ." ).");
 	
 				create_new_socauth_record(
+					$user_profile->email,
 					$provider,
 					$user_profile->identifier,
 					$user_profile->displayName
 				);
-			} else { //create a new user
-				//avoid using existing login
-				$generated_login = strrev( strchr(strrev($user_profile->email),'@')); //we use the e-mail address to get a login
-				$generated_login = substr($generated_login, 0, strlen($generated_login) - 1);
-				while (user_exists_by_field($generated_login, "login")) {
-					$generated_login = $generated_login . rand(0,9);  //avoid using existing login by adding random integer one by one			
-				}
-				
+			} else { //create a brand new new user
 				$created_user = create_new_hybridauth_user(
-					$generated_login,
 					$user_profile->email,
 					$user_profile->firstName,
 					$user_profile->lastName,
@@ -110,13 +103,12 @@ if ($_SESSION['user_connected'] == true) {
 					$user_profile->displayName
 				);
 				if ($created_user ) {
-					$_SESSION['info'] = "Welcome to family2family! We have created a new profile for you, based on your $provider information. Your login is: $generated_login , account details will be sent to your mail shortly, please set new password in the profile page.";
-								// set the user as result
+					// set the user as result
 					$log->LogDebug("User created");
-					$social_user_exist = get_user_by_provider_and_id( $provider, $user_profile->identifier );
-					$result = get_user_by_id( $social_user_exist["userId"] );
+					$result = get_user_by_email_and_password($user_profile->email,NULL );
 					//we will use the result by the end of the file to populate the session variables
-
+					$_SESSION['info'] = "Welcome to family2family! We have created a new profile for you, based on your $provider information. Your login is: " . $result["login"] . ", account details will be sent to your mail shortly, please set new password in the profile page.";
+					
 				} else {
 					$_SESSION['danger'] = "Your profile could not be created, please try again later or let us know.";
 					back_to_signin(); //includes HTML with redirection to the signin page.		

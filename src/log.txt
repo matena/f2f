@@ -346,3 +346,92 @@
 2015-08-18 21:11:24 - ERROR --> Error while creating a new user in database. Rolling back.SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE User.email = '' ,
 			providerId =  '',
 			providerUserId = '11605491655926' at line 2 
+2015-08-19 7:11:32 - DEBUG --> Social login with google started 
+2015-08-19 7:11:39 - DEBUG --> Social login with google started 
+2015-08-19 7:11:40 - DEBUG --> get_user_by_provider_and_id() called with: google and 116054916559264560003 parameters 
+2015-08-19 7:11:40 - DEBUG --> OK, exiting get_user_by_provider_and_id() 
+2015-08-19 7:11:40 - DEBUG --> Going to create a new entry in SocialAuth db table. 
+2015-08-19 7:11:40 - DEBUG --> user_exists_by_field called with: lukas.matena@gmail.com on column: email 
+2015-08-19 7:11:40 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 7:11:40 - DEBUG --> user_exists_by_field called with: lukas.matena on column: login 
+2015-08-19 7:11:40 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 7:11:40 - DEBUG --> create_new_hybridauth_user called with: lukas.matena, lukas.matena@gmail.com, Lukáš, Matěna, google, 116054916559264560003 and Lukáš Matěna 
+2015-08-19 7:11:40 - DEBUG --> generated password: 20c6f1b3d2 , generated time: 2015-08-19 07:11:40 
+2015-08-19 7:11:40 - ERROR --> Error while creating a new user in database. Rolling back.SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE User.email = 'lukas.matena@gmail.com' ,
+			providerId =  '2',
+			providerU' at line 2 
+2015-08-19 7:36:52 - DEBUG --> Social login with google started 
+2015-08-19 7:36:56 - DEBUG --> Social login with google started 
+2015-08-19 7:36:56 - DEBUG --> get_user_by_provider_and_id() called with: google and 116054916559264560003 parameters 
+2015-08-19 7:36:56 - DEBUG --> OK, exiting get_user_by_provider_and_id() 
+2015-08-19 7:36:56 - DEBUG --> User id for this provider not found in DB tabke SocialLogin . 
+2015-08-19 7:36:56 - DEBUG --> user_exists_by_field called with: lukas.matena@gmail.com on column: email 
+2015-08-19 7:36:56 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 7:36:56 - DEBUG --> create_new_hybridauth_user called with: , lukas.matena@gmail.com, Lukáš, Matěna, google, 116054916559264560003 and Lukáš Matěna 
+2015-08-19 7:36:56 - DEBUG --> generated password: 4abcdf3867 , generated time: 2015-08-19 07:36:56 
+2015-08-19 7:36:56 - DEBUG --> user_exists_by_field called with:  on column: login 
+2015-08-19 7:36:56 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 7:36:56 - ERROR --> Error while creating a new user in database. Rolling back.SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE User.email = 'lukas.matena@gmail.com',
+			providerId =  '2',
+			providerUs' at line 2 
+2015-08-19 7:46:31 - DEBUG --> Social login with google started 
+2015-08-19 7:46:35 - DEBUG --> Social login with google started 
+2015-08-19 7:46:35 - DEBUG --> get_user_by_provider_and_id() called with: google and 116054916559264560003 parameters 
+2015-08-19 7:46:36 - DEBUG --> OK, exiting get_user_by_provider_and_id() 
+2015-08-19 7:46:36 - DEBUG --> User id for this provider not found in DB tabke SocialLogin . 
+2015-08-19 7:46:36 - DEBUG --> user_exists_by_field called with: lukas.matena@gmail.com on column: email 
+2015-08-19 7:46:36 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 7:46:36 - DEBUG --> create_new_hybridauth_user called with: , lukas.matena@gmail.com, Lukáš, Matěna, google, 116054916559264560003 and Lukáš Matěna 
+2015-08-19 7:46:36 - DEBUG --> generated password: 32e1da898c , generated time: 2015-08-19 07:46:36 
+2015-08-19 7:46:36 - DEBUG --> user_exists_by_field called with: lukas.matena on column: login 
+2015-08-19 7:46:36 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 7:46:36 - DEBUG --> First part of db insert: 34 
+2015-08-19 7:46:36 - ERROR --> Error while creating a new user in database. Rolling back.SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE User.email = 'lukas.matena@gmail.com',
+			providerId =  '2',
+			providerUs' at line 2 
+2015-08-19 8:14:45 - DEBUG --> Social login with google started 
+2015-08-19 8:14:48 - DEBUG --> Social login with google started 
+2015-08-19 8:14:49 - DEBUG --> get_user_by_provider_and_id() called with: google and 116054916559264560003 parameters 
+2015-08-19 8:14:49 - DEBUG --> OK, exiting get_user_by_provider_and_id() 
+2015-08-19 8:14:49 - DEBUG --> User id for this provider not found in DB tabke SocialLogin . 
+2015-08-19 8:14:49 - DEBUG --> user_exists_by_field called with: lukas.matena@gmail.com on column: email 
+2015-08-19 8:14:49 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 8:14:49 - DEBUG --> create_new_hybridauth_user called with: , lukas.matena@gmail.com, Lukáš, Matěna, google, 116054916559264560003 and Lukáš Matěna 
+2015-08-19 8:14:49 - DEBUG --> generated password: 3022ac3de5 , generated time: 2015-08-19 08:14:49 
+2015-08-19 8:14:49 - DEBUG --> user_exists_by_field called with: lukas.matena on column: login 
+2015-08-19 8:14:49 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 8:14:49 - DEBUG --> First part of db insert: 35 
+2015-08-19 8:14:49 - DEBUG --> Created user: lukas.matena 
+2015-08-19 8:14:49 - DEBUG --> User created 
+2015-08-19 8:14:49 - DEBUG --> get_user_by_provider_and_id() called with: google and 116054916559264560003 parameters 
+2015-08-19 8:14:49 - DEBUG --> OK, exiting get_user_by_provider_and_id() 
+2015-08-19 8:14:49 - DEBUG --> get_user_by_id called with:  
+2015-08-19 8:14:49 - ERROR --> Problem with the database query execution : SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= ''' at line 1 
+2015-08-19 8:31:54 - DEBUG --> Social login with google started 
+2015-08-19 8:31:57 - DEBUG --> Social login with google started 
+2015-08-19 8:31:58 - DEBUG --> get_user_by_provider_and_id() called with: google and 116054916559264560003 parameters 
+2015-08-19 8:31:58 - DEBUG --> OK, exiting get_user_by_provider_and_id() 
+2015-08-19 8:31:58 - DEBUG --> User id for this provider not found in DB tabke SocialLogin . 
+2015-08-19 8:31:58 - DEBUG --> user_exists_by_field called with: lukas.matena@gmail.com on column: email 
+2015-08-19 8:31:58 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 8:31:58 - DEBUG --> create_new_hybridauth_user called with: , lukas.matena@gmail.com, Lukáš, Matěna, google, 116054916559264560003 and Lukáš Matěna 
+2015-08-19 8:31:58 - DEBUG --> generated password: be582d4cf7 , generated time: 2015-08-19 08:31:58 
+2015-08-19 8:31:58 - DEBUG --> user_exists_by_field called with: lukas.matena on column: login 
+2015-08-19 8:31:58 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 8:31:58 - DEBUG --> First part of db insert: 36 
+2015-08-19 8:31:58 - DEBUG --> Created user: lukas.matena 
+2015-08-19 8:31:58 - DEBUG --> User created 
+2015-08-19 8:31:58 - DEBUG --> d41d8cd98f00b204e9800998ecf8427e 
+2015-08-19 8:31:58 - DEBUG --> OK, exiting get_user_by_email_and_password(), 1 selected 
+2015-08-19 8:31:58 - DEBUG --> update_last_login() called for user_id: 36, time is: 2015-08-19 08:31:58 . 
+2015-08-19 8:31:58 - DEBUG --> DB UPDATE affected 1 lines, exiting update_last_login() 
+2015-08-19 8:32:42 - DEBUG --> Social login with google started 
+2015-08-19 8:32:46 - DEBUG --> Social login with google started 
+2015-08-19 8:32:46 - DEBUG --> get_user_by_provider_and_id() called with: google and 116054916559264560003 parameters 
+2015-08-19 8:32:46 - DEBUG --> OK, exiting get_user_by_provider_and_id() 
+2015-08-19 8:32:46 - DEBUG --> User id for this provider not found in DB tabke SocialLogin . 
+2015-08-19 8:32:46 - DEBUG --> user_exists_by_field called with: lukas.matena@gmail.com on column: email 
+2015-08-19 8:32:46 - DEBUG --> DB search done, user_exists_by_field(), the result is FALSE 
+2015-08-19 8:32:46 - DEBUG --> We have this user (by e-mail: lukas.matena@gmail.com ). 
+2015-08-19 8:32:46 - DEBUG --> create_new_socauth_record called with: google, , Lukáš Matěna 
+2015-08-19 8:32:46 - ERROR --> Error while creating a new user in database. Rolling back.SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '36' for key 'userId' 
