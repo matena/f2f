@@ -81,10 +81,12 @@ function get_user_by_email_and_password( $email, $password ) {
 * get the social user data from database table SocialLogin by provider name and provider user id
 **/
 function get_user_by_provider_and_id( $provider_name, $provider_user_id ) {
+	global $socialProviders;
 	$log = new KLogger ( "log.txt" , KLogger::DEBUG );
 	$log->LogDebug("get_user_by_provider_and_id() called with: $provider_name and $provider_user_id parameters");
 	
 	$socialProviderNr = $socialProviders["$provider_name"];	
+	$log->LogDebug("get_user_by_provider_and_id() called with: $provider_name (= $socialProviderNr)  and $provider_user_id parameters");
 	$db = dbConnect();
 	$query = "SELECT * FROM SocialLogin WHERE providerId = '$socialProviderNr' AND providerUserId = '$provider_user_id'";
 	try {
@@ -93,7 +95,7 @@ function get_user_by_provider_and_id( $provider_name, $provider_user_id ) {
 		$s_result = $stmt->fetch(PDO::FETCH_ASSOC);
 		$row_count = $stmt->rowCount();
 		$s_userId = $s_result['userId'];
-		$log->LogDebug("SocialLogin matched rows: " . $row_count . ", userId: " . $s_userId);
+		$log->LogDebug("SocialLogin: matched rows: " . $row_count . ", userId: " . $s_userId);
 		return $s_userId; //we expect one result as the e-mail is unique in User table	
 	} catch(PDOException $e) {
 		$log->LogError('Problem with the database query execution : ' . $e->getMessage());
@@ -253,7 +255,7 @@ function get_user_by_id($user_id) {
 	$log->LogDebug("get_user_by_id called with: $user_id");
 	$db = dbConnect();
 	// let generate a random password for the user
-	$query = "SELECT * FROM User WHERE $userId = '$user_id'";
+	$query = "SELECT * FROM User WHERE userId = '$user_id'";
 	try {
 		$stmt = $db->prepare($query);
 		$stmt->execute();
