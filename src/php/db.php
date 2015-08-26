@@ -268,41 +268,28 @@ function get_user_by_id($user_id) {
 		return NULL;
 	}
 }
-/* ORIGINAL PHP FUNCTIONS FROM HYBRIDAUTH EXAMPLES
-* get the user data from database by email and password
-function get_user_by_email_and_password( $email, $password )
-{
-	return mysqli_query_excute( "SELECT * FROM users WHERE email = '$email' AND password = '$password'" );
-}
+
+/*
+* update the infromation when the user last reviewed his profile.
+* returns boolean with success
 **/
- 
-/*
-* get the user data from database by provider name and provider user id
-function get_user_by_provider_and_id( $provider_name, $provider_user_id )
-{
-	return mysqli_query_excute( "SELECT * FROM users WHERE hybridauth_provider_name = '$provider_name' AND hybridauth_provider_uid = '$provider_user_id'" );
-}
-
-// You know how it works...
-$link = mysqli_connect( "localhost", "my_user", "my_password", "database" );
- 
-/*
-* We need this function cause I'm lazy
-
-function mysqli_query_excute( $sql )
-{
-	global $link;
- 
-	$result = mysqli_query( $link, $sql );
- 
-	if(  ! $result )
-	{
-		die( printf( "Error: %s\n", mysqli_error( $link ) ) );
+function update_last_reviewed($user_id) {
+	$log = new KLogger ( "log.txt" , KLogger::DEBUG );
+	$datetime = date("Y-m-d H:i:s"); // MySQL DATETIME format
+	
+	$log->LogDebug("update_last_reviewed called with: userId $user_id, current time: $datetime");
+	$db = dbConnect();
+	// let generate a random password for the user
+	$query = "UPDATE User SET profileLastReviewed = '$datetime' WHERE userId = '$user_id'";
+	try {
+		$stmt = $db->prepare($query);
+		$row_count = $stmt->execute();
+		$log->LogDebug("OK, exiting get_user_by_email_and_password(), $row_count affected");
+		return $datetime; //if ok, time is send back 
+	} catch(PDOException $e) {
+		$log->LogError('Problem with the database query execution : ' . $e->getMessage());
+		return NULL;
 	}
- 
-	return $result->fetch_object();
 }
- 
-**/
 
 ?>

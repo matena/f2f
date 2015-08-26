@@ -1,5 +1,6 @@
 <?php include './php/access.php';
-include_once './php/common.php'; ?>
+include_once './php/common.php';
+include_once './php/db.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,21 +66,22 @@ include_once './php/common.php'; ?>
 					<div class="alert alert-info alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					<strong>Last profile revision</strong><br/>
-					You last revised your <strong><?=$_SESSION['login']?></strong> profile on <strong>  
+					You last reviewed your <strong><?=$_SESSION['login']?></strong> profile on <strong>  
 					<?php
-						$lastReviewed = $_SESSION['profileLastReviewed'];
-						echo date("D, d M y H:i:s O",strtotime($lastReviewed)) . "<br/><small><i>This is time on the server, not your local time </i></small>" ;
-						dbConnect();
-						$userId = $_SESSION['userId'];
-						$mysql_date_now = date("Y-m-d H:i:s frac");
-						$query = "UPDATE User SET profileLastReviewed = '$mysql_date_now' WHERE userId = '$userId' LIMIT 1";
-						$result = mysql_query($query);				
-					
+						echo($_SESSION['profileLastReviewed']);
 					?> 
-					</strong>.
+					</strong>. <i>This is server time, now your local time</i>
+					<?php 						
+						$userId = $_SESSION['userId'];
+						echo(update_last_reviewed($userId));
+					?> 
 					
 
 				</div>
+			</div>
+			<div class="col-md-8 column">
+					<!--- Include all other warnings --->
+					<?php include './php/session_bootstrap_alert.php'; ?>
 			</div>
 		</div>
 	</div>

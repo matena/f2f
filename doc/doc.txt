@@ -3,3 +3,10 @@ Files to be updated upon site move to another provider:
 ------------------------------------
 signup.php
 signin.php
+
+
+
+------------------------------------
+Licence:
+
+Free Country Flags by Gang of the Coconuts is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. http://www.free-country-flags.com/
