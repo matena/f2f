@@ -141,7 +141,9 @@ abstract class BaseFacebook
     CURLOPT_CONNECTTIMEOUT => 10,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_TIMEOUT        => 60,
-    CURLOPT_USERAGENT      => 'facebook-php-3.2',
+    CURLOPT_USERAGENT      => 'facebook-php-3.2'
+	//setting up a proxy might help:
+	// CURLOPT_PROXY      => '69.171.224.38:8080'
   );
 
   /**

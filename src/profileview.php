@@ -62,7 +62,7 @@ include_once './php/db.php'; ?>
 
 
 		<div class="row clearfix">
-			<div class="col-md-4 column">
+			<div class="col-md-4 col-xs-12">
 					<div class="alert alert-info alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					<strong>Last profile revision</strong><br/>
@@ -79,11 +79,265 @@ include_once './php/db.php'; ?>
 
 				</div>
 			</div>
-			<div class="col-md-8 column">
+			<div class="col-md-8 col-xs-12">
 					<!--- Include all other warnings --->
 					<?php include './php/session_bootstrap_alert.php'; ?>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-xs-11">
+				<div class="page-header">
+					<h1>
+						Lukas family <small>Horní Počernice, Czech republic</small>
+					</h1>
+				</div>
+			</div>
+			<div class="col-xs-1">
+				<br/>
+				<button type="button" class="btn btn-danger">
+					Report <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+				</button>
+	
+			</div>
+			</div> <!-- headline row -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-6">
+						<img alt="Our family in woods" src="http://lorempixel.com/400/200/sports/2/" class="img-thumbnail">
+						<p>
+						<dl>
+							<dt>
+								Can host now!
+							</dt>
+							<dd>
+								Hosting up to 2 adults and 4 children
+							</dd>
+							<dt>
+								Family members
+							</dt>
+							<dd>
+								Lukas, Klara, Timon, Rebeka
+							</dd>
+							<dt>
+								Willing to host:
+							</dt>
+							<dd>
+								Etiam porta sem malesuada magna mollis euismod.
+							</dd>
+							<dt>
+								Cultural advice
+							</dt>
+							<dd>
+								Please remove your shoes before entering tatami.
+							</dd>
+						</dl>
+						</p>
+					</div>
+					<div class="col-md-6">
+											<!--------  Clickable svg buttons -->
+						<? include './php/svg_btn_click_wifi.php'; ?>
+						<? include './php/svg_btn_click_shopping.php'; ?>
+						<? include './php/svg_btn_click_phone.php'; ?>
+						<? include './php/svg_btn_click_smoking.php'; ?>
+
+						<p>
+							About us:
+						</p>
+						<div>
+							We are a young usce dapibus, tellus ac cursus commodo, tortor mauris condimen
+						</div>
+						
+						<p>
+							<a class="btn" href="#">Read all »</a>
+							
+						</p>
+							<button type="button" class="btn btn-lg btn-success">
+								Stay with Lukas <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+							</button> 
+							<button type="button" class="btn btn-lg btn-info">
+								Send message <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+							</button> 
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+									<div class="carousel slide" id="carousel-311431">
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-311431">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-311431">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-311431">
+					</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img alt="Carousel Bootstrap First" src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg" />
+						<div class="carousel-caption">
+							<p>
+								Papa playing baseball.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Carousel Bootstrap Second" src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg" />
+						<div class="carousel-caption">
+							<p>
+								Oliver surfing the ocean.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Carousel Bootstrap Third" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" />
+						<div class="carousel-caption">
+							<p>
+								Good things come....
+							</p>
+						</div>
+					</div>
+				</div> <a class="left carousel-control" href="#carousel-311431" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-311431" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+					
+						
+						</div>
+					</div>
+				</div> <!-- internal row -->
+			</div> <!-- col-md-8     -->
+			
+			<div class="col-md-4">
+				<ul class="nav nav-pills" role="tablist">
+					<li role="presentation" class="active"><a href="#">All references<span class="badge">42</span></a></li> 
+				</ul>
+				<button type="button" class="btn btn-default btn-info">
+								Leave reference <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+							</button> 
+							
+				<ul class="nav nav-pills" role="tablist">
+				  <li role="presentation"><a href="#">Positive<span class="badge success">40</span></a></li>
+				  <li role="presentation"><a href="#">Neutral<span class="badge info">1</span></a></li>
+				  <li role="presentation"><a href="#">Negative<span class="badge danger">1</span></a></li>
+				</ul>
+				<div class="media">
+					 <a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/64/64/people/8" class="media-object img-rounded"></a>
+					<div class="media-body">
+						<h4 class="media-heading">
+							From DeeJay for Lukas family
+						</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+						<div class="media">
+							 <a href="#" class="pull-left"><img alt="Bootstrap Media Another Preview" src="http://lorempixel.com/64/64/people/2" class="media-object img-rounded"></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+									From Lukas family for DeeJay
+								</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="media">
+					 <a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/64/64/" class="media-object img-rounded"></a>
+					<div class="media-body">
+						<h4 class="media-heading">
+							From DeeJay for Lukas family
+						</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+						<div class="media">
+							 <a href="#" class="pull-left"><img alt="Bootstrap Media Another Preview" src="http://lorempixel.com/64/64/people/2" class="media-object img-rounded"></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+									From Lukas family for DeeJay
+								</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr/>
+				<div class="media">
+					 <a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/64/64/" class="media-object img-rounded"></a>
+					<div class="media-body">
+						<h4 class="media-heading">
+							From DeeJay for Lukas family
+						</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+						<div class="media">
+							 <a href="#" class="pull-left"><img alt="Bootstrap Media Another Preview" src="http://lorempixel.com/64/64/people/2" class="media-object img-rounded"></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+									From Lukas family for DeeJay
+								</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="row">
+		<hr/>
+		<div class="col-md-12">
+			<p></p>
+			<h3>
+				Similar families in the same region
+			</h3>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://lorempixel.com/600/200/people/5" />
+						<div class="caption">
+							<h3>
+								Thumbs family<br/><small>Lisbon, Portugal</small>
+							</h3>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<?php include 'php/svg_btns_click_small.php'; ?>
+							<p>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
+							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://lorempixel.com/600/200/people/4" />
+						<div class="caption">
+							<h3>
+								Crocodiles <br/><small>Lisbon, Portugal</small>
+							</h3>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<?php include 'php/svg_btns_click_small.php'; ?>
+							<p>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://lorempixel.com/600/200/people/1" />
+						<div class="caption">
+							<h3>
+								Mumbai family<br/><small>Mumbai, India</small>
+							</h3>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<?php include 'php/svg_btns_click_small.php'; ?>
+							<p>
+								<a class="btn btn-primary" href="#">Request</a> <a class="btn" href="#">More...</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<h3>
+				Read great stuff!!
+			</h3>
+		</div>
+	</div>
+
 	</div>
 	
     <div class="footer">

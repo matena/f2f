@@ -41,7 +41,7 @@ return
 
 			"Twitter" => array (
 				"enabled" => true,
-				"keys"    => array ( "key" => "", "secret" => "" )
+				"keys"    => array ( "key" => "axpp57ITxb1qUVlNgMvXiUVhk", "secret" => "7oPFr3PFTUJ51AjxoPfceIguN4Be8078LBFpmU94Vuplc7ExuW" )
 			),
 
 			// windows live

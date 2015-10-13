@@ -239,14 +239,14 @@ session_start();
 		
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-1">
-				<form class="form-signin" style="min-height:150px">
-						<a href="./dashboard.php?provider=facebook" class="btn btn-block btn-social btn-facebook">
+				<form class="form-signin" style="min-height:150px">-
+						<a href="./dashboard.php?provider=facebook" class="btn btn-block btn-social btn-facebook" onClick=alert("Sorry_not_working_yet_due_to_hosting_limitations") >
 								<i class="fa fa-facebook"></i> Sign in with Facebook
 						</a>
 						<a href="./dashboard.php?provider=google" class="btn btn-block btn-social btn-google">
 								<i class="fa fa-google"></i> Sign in with Google+
 						</a>
-						<a href="./dashboard.php?provider=twitter" class="btn btn-block btn-social btn-twitter">
+						<a href="./dashboard.php?provider=twitter" class="btn btn-block btn-social btn-twitter" onClick=alert("Sorry not working yet due to hosting limitations") >
 								<i class="fa fa-twitter"></i> Sign in with Twitter
 						</a>
 				 <p>
